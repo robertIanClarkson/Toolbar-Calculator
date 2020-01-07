@@ -1,3 +1,5 @@
+import calculator.EvaluatorUI;
+
 import java.awt.AWTException;
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -22,6 +24,7 @@ public class MenuBarIconTest {
              ActionListener listener = new ActionListener() {
                  public void actionPerformed(ActionEvent e) {
                      System.out.println("action");
+                     EvaluatorUI eval = new EvaluatorUI();
                      // execute default action of the application
                      // ...
                  }
@@ -32,7 +35,7 @@ public class MenuBarIconTest {
              MenuItem defaultItem = new MenuItem("Do the action");
              defaultItem.addActionListener(listener);
              popup.add(defaultItem);
-             /// ... add other items
+//             popup.add()
              // construct a TrayIcon
              trayIcon = new TrayIcon(image, "Tray Demo", popup);
              // set the TrayIcon properties

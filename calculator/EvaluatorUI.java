@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class EvaluatorUI extends JFrame implements ActionListener {
+public class EvaluatorUI extends JFrame implements ActionListener {
     private TextField txField = new TextField();
     private Panel buttonPanel = new Panel();
     private Button[] buttons = new Button[bText.length];
@@ -21,7 +21,7 @@ class EvaluatorUI extends JFrame implements ActionListener {
         EvaluatorUI calc = new EvaluatorUI();
     }
 
-    private EvaluatorUI() {
+    public EvaluatorUI() {
         setLayout(new BorderLayout());
         add(txField, BorderLayout.NORTH);
         txField.setEditable(false);
