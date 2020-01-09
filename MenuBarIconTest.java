@@ -16,23 +16,19 @@ public class MenuBarIconTest {
     public static void main(String[] args) throws MalformedURLException {
         TrayIcon trayIcon = null;
          if (SystemTray.isSupported()) {
-             // get the SystemTray instance
              SystemTray tray = SystemTray.getSystemTray();
-             // load an image
              Image image = Toolkit.getDefaultToolkit().getImage(new URL("https://img.icons8.com/ultraviolet/30/000000/plus-minus.png"));
-             // create a action listener to listen for default action executed on the tray icon
+             EvaluatorUI eval = new EvaluatorUI();
              ActionListener listener = new ActionListener() {
                  public void actionPerformed(ActionEvent e) {
                      System.out.println("action");
-                     EvaluatorUI eval = new EvaluatorUI();
-                     // execute default action of the application
-                     // ...
+                     eval.changeVisibility();
                  }
              };
              // create a popup menu
              PopupMenu popup = new PopupMenu();
              // create menu item for the default action
-             MenuItem defaultItem = new MenuItem("Do the action");
+             MenuItem defaultItem = new MenuItem("ON/OFF");
              defaultItem.addActionListener(listener);
              popup.add(defaultItem);
 //             popup.add()
