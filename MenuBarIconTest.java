@@ -19,7 +19,7 @@ public class MenuBarIconTest {
              // get the SystemTray instance
              SystemTray tray = SystemTray.getSystemTray();
              // load an image
-             Image image = Toolkit.getDefaultToolkit().getImage(new URL("http://cdn1.iconfinder.com/data/icons/Hypic_Icon_Pack_by_shlyapnikova/16/forum_16.png"));
+             Image image = Toolkit.getDefaultToolkit().getImage(new URL("https://img.icons8.com/ultraviolet/30/000000/plus-minus.png"));
              // create a action listener to listen for default action executed on the tray icon
              ActionListener listener = new ActionListener() {
                  public void actionPerformed(ActionEvent e) {
