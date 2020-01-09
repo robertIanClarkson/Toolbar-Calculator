@@ -21,19 +21,20 @@ public class MenuBarIconTest {
              EvaluatorUI eval = new EvaluatorUI();
              ActionListener listener = new ActionListener() {
                  public void actionPerformed(ActionEvent e) {
-                     System.out.println("action");
+                     System.out.println(e);
                      eval.changeVisibility();
                  }
              };
              // create a popup menu
-             PopupMenu popup = new PopupMenu();
-             // create menu item for the default action
-             MenuItem defaultItem = new MenuItem("ON/OFF");
-             defaultItem.addActionListener(listener);
-             popup.add(defaultItem);
+             // PopupMenu popup = new PopupMenu();
+             // popup.addActionListener(listener);
+             // // create menu item for the default action
+             // MenuItem defaultItem = new MenuItem("ON/OFF");
+             // defaultItem.addActionListener(listener);
+             // popup.add(defaultItem);
 //             popup.add()
              // construct a TrayIcon
-             trayIcon = new TrayIcon(image, "Tray Demo", popup);
+             trayIcon = new TrayIcon(image, "Tray Demo");
              // set the TrayIcon properties
              trayIcon.addActionListener(listener);
              // ...
