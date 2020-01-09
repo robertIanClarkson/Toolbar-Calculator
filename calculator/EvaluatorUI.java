@@ -17,6 +17,8 @@ public class EvaluatorUI extends JFrame implements ActionListener {
             "*", "0", "^", "=", "/", "(", ")", "C", "CE"
     };
 
+    private static boolean visible = false;
+
     public static void main(String argv[]) {
         EvaluatorUI calc = new EvaluatorUI();
     }
@@ -40,7 +42,16 @@ public class EvaluatorUI extends JFrame implements ActionListener {
         setSize(400, 400);
         setLocationByPlatform(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
+        setVisible(visible);
+    }
+
+    public void changeVisibility() {
+        if(visible == false) {
+            visible = true;
+        } else {
+            visible = false;
+        }
+        setVisible(visible);
     }
 
     public void actionPerformed(ActionEvent buttonClicked) {
@@ -49,7 +60,7 @@ public class EvaluatorUI extends JFrame implements ActionListener {
         if (command.equals("=")) {
             txField.setText(String.valueOf(equation.eval(textFromField)));
         } else if (command.equals("C")) {
-            txField.setText("");
+            txField.setText(""+txField.getText().substring(0, txField.getText().length() - 1));
         } else if (command.equals("CE")) {
             try {
                 for (int index = textFromField.length(); index >= 0; index--) {
