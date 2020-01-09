@@ -60,7 +60,7 @@ public class EvaluatorUI extends JFrame implements ActionListener {
         if (command.equals("=")) {
             txField.setText(String.valueOf(equation.eval(textFromField)));
         } else if (command.equals("C")) {
-            txField.setText(""+txField.getText().substring(0, txField.getText().length() - 1));
+            txField.setText("" + txField.getText().substring(0, txField.getText().length() - 1));
         } else if (command.equals("CE")) {
             try {
                 for (int index = textFromField.length(); index >= 0; index--) {
