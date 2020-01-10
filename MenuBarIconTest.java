@@ -21,23 +21,7 @@ public class MenuBarIconTest {
             SystemTray tray = SystemTray.getSystemTray();
             Image image = Toolkit.getDefaultToolkit().getImage(new URL("https://img.icons8.com/ultraviolet/30/000000/plus-minus.png"));
             EvaluatorUI eval = new EvaluatorUI();
-            ActionListener listener = new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    System.out.println(e);
-                    eval.changeVisibility();
-                }
-            };
-            // create a popup menu
-            // PopupMenu popup = new PopupMenu();
-            // popup.addActionListener(listener);
-            // // create menu item for the default action
-            // MenuItem defaultItem = new MenuItem("ON/OFF");
-            // defaultItem.addActionListener(listener);
-            // popup.add(defaultItem);
-//             popup.add()
-            // construct a TrayIcon
             trayIcon = new TrayIcon(image, "Tray Demo");
-
             trayIcon.addMouseListener(new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
                     if (e.getClickCount() == 1) {
@@ -45,10 +29,6 @@ public class MenuBarIconTest {
                     }
                 }
             });
-            // set the TrayIcon properties
-//            trayIcon.addActionListener(listener);
-            // ...
-            // add the tray image
             try {
                 tray.add(trayIcon);
             } catch (AWTException e) {
