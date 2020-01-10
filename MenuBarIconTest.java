@@ -15,6 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MenuBarIconTest {
+    static int x, y;
     public static void main(String[] args) throws MalformedURLException {
         TrayIcon trayIcon = null;
         if (SystemTray.isSupported()) {
@@ -25,7 +26,9 @@ public class MenuBarIconTest {
             trayIcon.addMouseListener(new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
                     if (e.getClickCount() == 1) {
-                        eval.setLocation(e.getX(), e.getY());
+                        x = 100*(e.getX()/100);
+                        y = e.getY();
+                        eval.setLocation(x, y);
                         eval.changeVisibility();
                     }
                 }
