@@ -57,6 +57,10 @@ public class EvaluatorUI extends JFrame implements ActionListener {
         setVisible(visible);
     }
 
+    public boolean isVisible() {
+        return visible;
+    }
+
     public void actionPerformed(ActionEvent buttonClicked) {
         command = buttonClicked.getActionCommand();
         textFromField = txField.getText();

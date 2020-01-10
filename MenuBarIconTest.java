@@ -16,13 +16,14 @@ import java.net.URL;
 
 public class MenuBarIconTest {
     static int x, y;
+    static TrayIcon trayIcon = null;
     public static void main(String[] args) throws MalformedURLException {
-        TrayIcon trayIcon = null;
         if (SystemTray.isSupported()) {
             SystemTray tray = SystemTray.getSystemTray();
-            Image image = Toolkit.getDefaultToolkit().getImage(new URL("https://img.icons8.com/ultraviolet/30/000000/plus-minus.png"));
+            Image image = Toolkit.getDefaultToolkit().getImage("icon.png");
+            Image image_background = Toolkit.getDefaultToolkit().getImage("icon_background.png");
             EvaluatorUI eval = new EvaluatorUI();
-            trayIcon = new TrayIcon(image, "Tray Demo");
+            trayIcon = new TrayIcon(image, "Calculator");
             trayIcon.addMouseListener(new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
                     if (e.getClickCount() == 1) {
@@ -30,6 +31,12 @@ public class MenuBarIconTest {
                         y = e.getY();
                         eval.setLocation(x, y);
                         eval.changeVisibility();
+                        if(eval.isVisible()) {
+                            trayIcon.setImage(image_background);
+                        } else {
+                            trayIcon.setImage(image);
+                        }
+
                     }
                 }
             });
