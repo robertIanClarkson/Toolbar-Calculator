@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EvaluatorUI extends JFrame implements ActionListener {
+    private Font font = new Font("Monospaced", Font.BOLD, 30);
     private TextField txField = new TextField();
     private Panel buttonPanel = new Panel();
     private Button[] buttons = new Button[bText.length];
@@ -25,6 +26,7 @@ public class EvaluatorUI extends JFrame implements ActionListener {
 
     public EvaluatorUI() {
         setLayout(new BorderLayout());
+        txField.setFont(font);
         add(txField, BorderLayout.NORTH);
         txField.setEditable(false);
         add(buttonPanel, BorderLayout.CENTER);
@@ -39,7 +41,7 @@ public class EvaluatorUI extends JFrame implements ActionListener {
             buttons[i].addActionListener(this);
         }
         setTitle("Calculator");
-        setSize(400, 400);
+        setSize(300, 300);
         setLocationByPlatform(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
