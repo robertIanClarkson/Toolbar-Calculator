@@ -42,6 +42,7 @@ public class EvaluatorUI extends JFrame implements ActionListener {
         setSize(400, 400);
         setLocationByPlatform(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setVisible(visible);
     }
 
